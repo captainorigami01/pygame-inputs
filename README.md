@@ -1,3 +1,6 @@
+# pygame inputs
+a python library used to create input boxes and buttons in pygame for a GUI
+
 This is a free open source python library.
 Please read the license before editing or sharing online
 
