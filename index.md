@@ -1,29 +1,44 @@
-## Welcome to GitHub Pages
+# Welcome to the documentation for pygame inputs
 
-You can use the [editor on GitHub](https://github.com/captainorigami01/pygame-inputs/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Installation
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+You can install pygame inputs through the command line using the 'pip' command or downloading one of the releases from github
 
-### Markdown
+### PIP installation:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+`pip install pygameinputs`
 
-```markdown
-Syntax highlighted code block
+### github installation
 
-# Header 1
-## Header 2
-### Header 3
+ - Download the version of pygame inputs from the releases that you want
+ - Open your python directory on your computer (If you don't know where this is you will have to look this up based on your operating system)
+ - Go to your python version folder -> lib -> site-packages
+ - paste the pygame inputs folder here
 
-- Bulleted
-- List
+## Getting Started
+### Creating the event loop
+```python
+import pygame  # import pygame
 
-1. Numbered
-2. List
+pygame.init()
+clock = pygame.time.Clock()
 
-**Bold** and _Italic_ and `Code` text
+win = pygame.display.set_mode((500, 500))  # Creates a window of 500 x 500 pixels in size
 
-[Link](url) and ![Image](src)
+
+def update():
+  win.fill((60, 60, 60))  # sets the background of the window to a RGB colour of 60, 60, 60
+  pygame.display.update()  # Updates the display every frame
+  
+ 
+ run = True
+ while run:
+  clock.tick(60)  # sets the maximum frame rate to 60 fps
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:  # checks if the close button is pressed
+      run = False  # if the close button was pressed then it will stop the main loop
+  update()  # Calls the update function
+ pygame.quit()  # stops pygame and closes the window
 ```
 
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
