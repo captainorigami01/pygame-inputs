@@ -44,4 +44,6 @@ def update():
 
 > [The buttons can be found here](https://captainorigami01.github.io/pygame-inputs/buttons)
 
+### Text Box Creation
 
+> [The text boxes can be found here](https://captainorigami01.github.io/pygame-inputs/text-box)
