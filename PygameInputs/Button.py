@@ -2,6 +2,7 @@ import pygame
 
 pygame.init()
 
+
 class Button(object):
     def __init__(self, x:int = 0, y:int = 0, width:int = 200, height:int = 50, text:str = "TEXT HERE", font:str = 'calibri', fontsize:int = 11, color:tuple = (0, 0, 0), background:tuple = (230, 230, 230), backgroundHover:tuple = (200, 200, 200), borderColour:tuple = (230, 230, 230), borderHoverColour:tuple = (200, 200, 200), borderWeight:int = 1, bold:bool = False, italic:bool = False):
         self.x = x
@@ -27,10 +28,12 @@ class Button(object):
         if self.visible:
             if self.hover:
                 pygame.draw.rect(window, self.bgHover, (self.x, self.y, self.width, self.height))
-                pygame.draw.rect(window, self.hBorder, (self.x, self.y, self.width, self.height), self.borderWidth)
+                if self.borderWidth > 0:
+                    pygame.draw.rect(window, self.hBorder, (self.x, self.y, self.width, self.height), self.borderWidth)
             else:
                 pygame.draw.rect(window, self.bg, (self.x, self.y, self.width, self.height))
-                pygame.draw.rect(window, self.border, (self.x, self.y, self.width, self.height), self.borderWidth)
+                if self.borderWidth > 0:
+                    pygame.draw.rect(window, self.border, (self.x, self.y, self.width, self.height), self.borderWidth)
 
             font = pygame.font.SysFont(self.font, self.fs, self.bold, self.italic)
             text = font.render(self.text, True, self.color)
