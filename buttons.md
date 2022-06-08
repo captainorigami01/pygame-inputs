@@ -1,5 +1,8 @@
 ## Buttons
-Place the code below with the imports at the top of your script
+
+> [HOME](https://captainorigami01.github.io/pygame-inputs/)
+
+Place the code below with the imports at the top of your [script](https://github.com/captainorigami01/pygame-inputs/blob/c1b627e65933d34479a9376751eaf7d4776e48b1/starter.py)
 ```python
 from pygameinputs.Button import Button  # import the Button objects
 ```
