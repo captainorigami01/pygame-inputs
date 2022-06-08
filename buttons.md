@@ -35,6 +35,41 @@ The button object allows different customisations, the table below describes the
 | backgroundHover (tuple) | myButton = Button(backgroundHover(80, 80, 80)) | Sets the background colour of the button in the hover state in RGB |
 |borderColour (tuple)|myButton = button(borderColour((255, 0, 0)) | Sets the colour of the border using RGB colour values|
 |borderHoverColour (tuple) |myButton = Button(borderHoverColour=(200, 0, 0))|Sets the hover colour of the border in RGB|
-|borderWeight (int)|myButton = Button(borderWeight=2)|Sets the thickness of the border in pixels ***Please note a border of 0 pixels will overwrite the default background to the border colour - this is a bug and will be fixed in the next version***|
+|borderWeight (int)|myButton = Button(borderWeight=2)|Sets the thickness of the border in pixels|
 |bold (Boolean)|myButton = Button(bold=True)|True sets the text to bold, it is false by default|
 |italic (Boolean)|myButton = Button(italic=True)|Sets the text to italic when True, is False by default|
+
+#### Button methods
+
+Methods are pre defined functions within the buttons that help them behave correctly
+
+**draw(window)**
+Draws the button to the screen
+
+`window` is the display you want to put the button on
+
+The code below uses the update function from the [starter.py script](https://github.com/captainorigami01/pygame-inputs/blob/c1b627e65933d34479a9376751eaf7d4776e48b1/starter.py)
+
+```python
+def update():
+  win.fill((60, 60, 60))
+  myButton.draw(win)  # win is defined earlier on in the script
+  pygame.display.update()
+```
+
+**getPressed(event)**
+Finds out whether the button is pressed or not
+
+`event` is passed from the event loop within your project
+
+The code below uses the event handler from the [starter.py script](https://github.com/captainorigami01/pygame-inputs/blob/c1b627e65933d34479a9376751eaf7d4776e48b1/starter.py)
+
+```python
+for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      run = False
+    if myButton.getPressed(event):
+      print("Button pressed")  # outputs "Button pressed" when the button is pressed
+```
+
+Documentation is up to date for version 0.0.4
