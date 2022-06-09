@@ -36,6 +36,40 @@ The text box object allows different customisations, the table below describes t
 | font (string) | myTextBox = TextBox(font="font.ttf") | Takes a font name in the form of a string. This can be the path to a font such as the way the example shows or a font name such as 'calibri' |
 | fontSize (int) | myTextBox = TextBox(fontSize=11) | Sets the size of the font in pixels |
 | color (tuple) | myTextBox = TextBox(color=()) | Sets the color of the text on the text box in RGB |
-|  |  |  |
+| background (tuple) | myTextBox = TextBox(background=(230, 230, 230)) | Sets the background colour of the text box in RGB |
+| backgroundHover (tuple) | myTextBox = TextBox(backgroundHover(200, 200, 200)) | Sets the background when hovering over the text box in RGB |
+| borderColour (tuple) | myTextBox = TextBox(borderColour(230, 230, 230)) | Sets the colour for the border around the text box in RGB |
+| borderHoverColour (tuple) | myTextBox = TextBox(borderHoverColour=(200, 200, 200)) | Sets the hover colour for the border in RGB |
+| borderWeight (int) | myTextBox = TextBox(borderWeight=1) | Sets the width of the border in pixels |
+| bold (Boolean) | myTextBox = TextBox(bold=True) | Sets the text to bold when True |
+| italic (Boolean) | myTextBox = TextBox(italic=True) | Makes the text italic when True |
+| minlen (int) | myTextBox = TextBox(minlength=5) | The minimum input length before the input is accepted **Not functional yet** |
+| maxlen (int) | myTextBox = TextBox(maxlen=10) | Te maximum accepted length for the input in the text box |
 
-***INCOMPLETE DOCUMENTATION MORE COMING SOON***
+### TextBox methods
+
+Methods are pre defined functions within the text boxes that help them behave correctly
+
+**draw(window)** Draws the button to the screen
+`window` is the display you want to put the button on
+
+The code below uses the update function form the [starter.py script](https://github.com/captainorigami01/pygame-inputs/blob/c1b627e65933d34479a9376751eaf7d4776e48b1/starter.py)
+
+```python
+def update():
+  win.fill((60, 60, 60))
+  myTextBox.draw(win)  # win is defined earlier on in the script
+  pygame.display.update()
+```
+
+**events(event)** finds out wheter or not the text box is being typed in or clicked on
+`event` is passed form the event loop within your script
+
+The code below uses the event handler from the [starter.py script](https://github.com/captainorigami01/pygame-inputs/blob/c1b627e65933d34479a9376751eaf7d4776e48b1/starter.py)
+
+```python
+for event in pygame.event.get():
+  if event.type == pygame.QUIT:
+    run = False
+  myTextBox.events(event)
+```
