@@ -73,3 +73,6 @@ for event in pygame.event.get():
     run = False
   myTextBox.events(event)
 ```
+> [Sample script](https://github.com/captainorigami01/pygame-inputs/blob/b18fc5c870276ac123a5987894f9d5c2120b06b8/button-sample.py)
+
+Documentation is up to date for version 0.0.4
