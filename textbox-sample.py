@@ -5,7 +5,7 @@ pygame.init()
 clock = pygame.time.Clock()
 win = pygame.display.set_mode((500, 500))  # Creates a window 500 x 500 pixels
 
-myTextBox = TextBox()  # Creates a text box
+myTextBox = TextBox(x=150, y=225, placeholder="A placeholder", fontSize=18)  # Creates a text box
 
 
 def update():
