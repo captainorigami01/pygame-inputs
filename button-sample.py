@@ -18,7 +18,8 @@ while run:
   clock.tick(60)  # sets the fps to a maximum 60
   for event in pygame.event.get():
     if event.type == pygame.QUIT:  # checks if the close button is pressed
-      run = False
-    if myButton.getPressed(event):
-      print("Button pressed")
-pygame.quit()
+      run = False  # Stops the while loop
+    if myButton.getPressed(event):  # Checks if the button is pressed
+      print("Button pressed")  # Ouputs "Button pressed" if the button is pressed
+  update()  # Runs the update function
+pygame.quit()  # Stops pygame and closes the window
