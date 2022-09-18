@@ -50,6 +50,15 @@ Updated some documentation and added extra information to PyPi.
 
 Fixed a bug with the border width property overwriting the background when set to 0
 
+### Version 0.0.4 ###
+
+ - Added typing indicator
+ - Added built in event handling within the button and textbox
+ 
+### Version 0.0.5 ###
+
+ - Added text labels
+
 ## Future updates: ##
  - [ ] The textbox will be updated to have an indicator to show you are typing in the box.
  - [ ] Built-in features to handle button press and typing events making your code shorter and simpler
