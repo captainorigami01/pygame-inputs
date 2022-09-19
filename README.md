@@ -60,8 +60,8 @@ Fixed a bug with the border width property overwriting the background when set t
  - Added text labels
 
 ## Future updates: ##
- - [ ] The textbox will be updated to have an indicator to show you are typing in the box.
- - [ ] Built-in features to handle button press and typing events making your code shorter and simpler
+ - [x] The textbox will be updated to have an indicator to show you are typing in the box.
+ - [x] Built-in features to handle button press and typing events making your code shorter and simpler
  - [x] Addition of cursors to add effect as you type or press buttons - partially done (cursors flickering so haven't been published to github)
 
 > If you have any reccomendations or would like to contribute please visit the [GitHub](https://github.com/captainorigami01/pygame-inputs) and make a pull request to upload code or create an issue with the enhancement label
