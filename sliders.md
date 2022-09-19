@@ -95,7 +95,7 @@ Sets the visibility of the slider as a boolean.
 mySlider.setVisible(False)  # Hides the slider and stops all interactions
 ```
 
-> sample script coming soon
+> [Sample script](https://github.com/captainorigami01/pygame-inputs/blob/gh-pages/slider-sample.py)
 
 Documentation up to date for version 0.0.5
 
