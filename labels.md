@@ -69,6 +69,10 @@ Toggles the visibility of the label
 
 If the label is hidden it becomes visible and if it is visible it becomes hidden.
 
+```python
+myLabel.toggleVisibility()
+```
+
 **changeText(text)**
 Changes the text on the label to `text` where text is a string
 
