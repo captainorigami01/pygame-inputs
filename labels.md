@@ -80,6 +80,6 @@ Changes the text on the label to `text` where text is a string
 myLabel.changeText("New Text")
 ```
 
-> [sample script](https://github.com/captainorigami01/pygame-inputs/blob/gh-pages/label-sample.py)
+> [Sample script](https://github.com/captainorigami01/pygame-inputs/blob/gh-pages/label-sample.py)
 
 Documentation up to date for version 0.0.5
