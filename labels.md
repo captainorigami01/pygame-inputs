@@ -55,11 +55,26 @@ def update():
   myLabel.draw(win)  # win is defined earlier on in the script
   pygame.display.update()
 ```
+**getVisibility**
+Returns the visibility of the label as a boolean
+
+If the label is hidden it returns False otherwise it returns True
+
+```python
+label_visible = myLabel.getVisibility()
+```
 
 **toggleVisibility()**
 Toggles the visibility of the label
 
 If the label is hidden it becomes visible and if it is visible it becomes hidden.
+
+**changeText(text)**
+Changes the text on the label to `text` where text is a string
+
+```python
+myLabel.changeText("New Text")
+```
 
 > sample script coming soon
 
