@@ -31,3 +31,71 @@ Both sliders have the exact same properties. The difference is the direction in 
 |handleColor (tuple)|myslider(handleColor=(50, 50, 50))|The colour of the handle in RGB|
 |sliderPercent (int)|mySlider(sliderPercent=20)|The percentage of how far along the slider the handle should be. In the example it is 20%|
 |visible (boolean)|mySlider(visible=True)|Whether the slider should be visble|
+
+#### Slider methods
+
+Methods are pre defined functions within the sliders
+
+**draw(window)**
+Draws the slider to the screen
+
+`window` is the display that you want to put the slider on
+
+The code below uses the update function from the [starter.py script](https://github.com/captainorigami01/pygame-inputs/blob/c1b627e65933d34479a9376751eaf7d4776e48b1/starter.py)
+
+```python
+def update():
+  win.fill((60, 60, 60))
+  mySlider.draw(win)  # win is defined earlier on in the script
+  pygame.display.update()
+```
+
+**getPressed(event)**
+returns whether or not the button is pressed as a boolean and also allows the active state of the slider to be triggered
+
+`event` comes from the main loop where you do the event handling
+
+The code below uses the while run from the [starter.py script](https://github.com/captainorigami01/pygame-inputs/blob/c1b627e65933d34479a9376751eaf7d4776e48b1/starter.py)
+
+```python
+run = True
+while run:
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      run = False
+    sliderPressed = mySlider.getPressed(event)
+  update()
+pygame.quit()
+```
+
+**getPercent()**
+returns the slider position as an integer between 0 and 100
+
+```python
+sliderPercent = mySlider.getPercent()
+```
+
+**setPercent(percent)**
+Sets the position on the slider as an integer between 0 and 100
+
+`percent` Is the position between 0 and 100 you want to se the slider to
+
+```python
+mySlider.setPercent(20)  # Sets the postion to 20%
+```
+
+If the value is too low or high it will display the error: `Slider Error: Takes an integer between 0 and 100`
+
+**setVisible(visible)**
+Sets the visibility of the slider as a boolean.
+
+`visible` is a boolean. True makes the slider visible and False hides the slider.
+
+```python
+mySlider.setVisible(False)  # Hides the slider and stops all interactions
+```
+
+> sample script coming soon
+
+Documentation up to date for version 0.0.5
+
