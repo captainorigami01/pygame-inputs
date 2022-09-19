@@ -56,4 +56,4 @@ def update():
 
 > [The sliders can be found here](https://captainorigami01.github.io/pygame-inputs/sliders)
 
-*Want to try version 0.0.6 now and get access to sliders as well as app and link buttons early and join the pre release? [click here](https://github.com/captainorigami01/pygame-inputs/releases/tag/v0.0.6) and follow the [github installation guide](https://captainorigami01.github.io/pygame-inputs/#github-installation)*
+*Want to try version 0.0.6 now and get access to sliders as well as app and link buttons early and join the pre release? [click here](https://github.com/captainorigami01/pygame-inputs/releases/tag/v0.0.6) to open the release and follow the [github installation guide](https://captainorigami01.github.io/pygame-inputs/#github-installation) to install the package*
