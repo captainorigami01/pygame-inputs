@@ -38,6 +38,8 @@ The button object allows different customisations, the table below describes the
 |borderWeight (int)|myButton = Button(borderWeight=2)|Sets the thickness of the border in pixels|
 |bold (Boolean)|myButton = Button(bold=True)|True sets the text to bold, it is false by default|
 |italic (Boolean)|myButton = Button(italic=True)|Sets the text to italic when True, is False by default|
+|link (string)|myButton = LinkButton(link="https://google.com")|Takes a link to open as a URL in a webbrowser. ***Link buttons only***|
+|app( string)|myButton = AppButton(app="C:\\Windows\\System32\\notepad.exe")|Takes a link to the app that you want to open. In this case notepad. ***App buttons only***|
 
 #### Button methods
 
@@ -61,6 +63,9 @@ def update():
 Finds out whether the button is pressed or not
 
 `event` is passed from the event loop within your project
+
+In link buttons, if it detects that the button is pressed it will open the link as well
+In app buttons, if it detects that the button is pressed it will open the app as well
 
 The code below uses the event handler from the [starter.py script](https://github.com/captainorigami01/pygame-inputs/blob/c1b627e65933d34479a9376751eaf7d4776e48b1/starter.py)
 
