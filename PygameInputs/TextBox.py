@@ -77,4 +77,3 @@ class TextBox(object):
         else:
             self.hover = False
         return self.hover  # Returns the hover state (is there if needed)
-
