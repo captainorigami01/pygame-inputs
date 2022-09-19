@@ -45,7 +45,7 @@ Methods are pre defined functions within the labels
 **draw(window)**
 Draws the label to the screen
 
-`window` is the display that you want to put the button on
+`window` is the display that you want to put the label on
 
 The code below uses the update function from the [starter.py script](https://github.com/captainorigami01/pygame-inputs/blob/c1b627e65933d34479a9376751eaf7d4776e48b1/starter.py)
 
