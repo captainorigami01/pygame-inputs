@@ -51,3 +51,7 @@ def update():
 ### Labels Creation
 
 > [The labels can be found here](https://captainorigami01.github.io/pygame-inputs/labels)
+
+### Sliders Creation (version 0.0.6 - not released yet)
+
+> [The sliders can be found here](https://captainorigami01.github.io/pygame-inputs/sliders)
