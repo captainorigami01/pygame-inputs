@@ -39,7 +39,7 @@ The button object allows different customisations, the table below describes the
 |bold (Boolean)|myButton = Button(bold=True)|True sets the text to bold, it is false by default|
 |italic (Boolean)|myButton = Button(italic=True)|Sets the text to italic when True, is False by default|
 |link (string)|myButton = LinkButton(link="https://google.com")|Takes a link to open as a URL in a webbrowser. ***Link buttons only***|
-|app( string)|myButton = AppButton(app="C:\\Windows\\System32\\notepad.exe")|Takes a link to the app that you want to open. In this case notepad. ***App buttons only***|
+|app( string)|myButton = AppButton(app="C:\\Windows\\System32\\notepad.exe")|Takes the path to the app or file that you want to open. ***App buttons only***|
 
 #### Button methods
 
