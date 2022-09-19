@@ -1,8 +1,8 @@
 import pygame
+import time
 
 pygame.init()
 
-### Creates the TextBox Class ###
 
 class TextBox(object):
     def __init__(self, x:int = 0, y:int = 0, width:int = 200, height:int = 50, placeholder:str = "", font:str = "calibri",
@@ -29,51 +29,86 @@ class TextBox(object):
         self.borderWidth = borderWeight
         self.hover = False
         self.active = False
+        self.counter = time.time()
 
     def draw(self, window):
         self.isHover()
-        if self.hover or self.active:  # hover state when hovering or currently active
+        if self.hover or self.active:
             pygame.draw.rect(window, self.bgHover, (self.x, self.y, self.width, self.height))
             pygame.draw.rect(window, self.hborder, (self.x, self.y, self.width, self.height), self.borderWidth)
-        else:  # Default state
+        else:
             pygame.draw.rect(window, self.bg, (self.x, self.y, self.width, self.height))
             pygame.draw.rect(window, self.border, (self.x, self.y, self.width, self.height), self.borderWidth)
 
-        font = pygame.font.SysFont(self.font, self.fs, self.bold, self.italic)  # Creates the information for the font
+        font = pygame.font.SysFont(self.font, self.fs, self.bold, self.italic)
         if self.text == "":
-            text = font.render(self.placeholder, True, self.color)  # sets the tex to the placeholder if no text is inputted yet
+            text = font.render(self.placeholder, True, self.color)
         else:
             text = font.render(self.text, True, self.color)
 
         text_rect = text.get_rect()
-        width = text_rect.width  # Gets the width of the text
-        height = text_rect.height  # Gets the height of the text
+        width = text_rect.width
+        height = text_rect.height
 
-        textX = (self.x + (self.width // 2)) - width // 2  # Centres the text in the horizontal (x) axis
-        textY = (self.y + (self.height // 2)) - height // 2  # Centres the text in the vertical (y) axis
+        textX = (self.x + (self.width // 2)) - width // 2
+        textY = (self.y + (self.height // 2)) - height // 2
 
-        window.blit(text, (textX, textY))  # Displays the text to the window
+        window.blit(text, (textX, textY))
 
-    def backspacePressed(self):  # Removes an item from the end of the string of the backspace key is pressed
+        if 1 <= time.time() - self.counter <= 2 and self.active:
+            text = font.render('|', True, self.color)
+            window.blit(text, (textX + width, textY))
+            print("XD")
+        elif time.time() - self.counter >= 2:
+            self.counter = time.time()
+
+    # deprecated code
+
+    def backspacePressed(self):
         text = list(self.text)
         if text.__len__() >= 1:
             text.pop()
         self.text = ''.join(text)
 
-    def textAppend(self, character:str):  # Adds text to the end of the string
+    def textAppend(self, character:str):
         text = list(self.text)
         if text.__len__() < self.maxlen or self.maxlen <= 0:
             text.append(character)
         self.text = ''.join(text)
 
-    def isHover(self):  # This function checks if the mouse is hovering over the button
-        mouse = pygame.mouse.get_pos()  # Gets the position of the mouse
+    # end of deprecated code
 
-        if mouse[0] >= self.x and mouse[0] <= self.x + self.width:  # The horizontal (x) axis
-            if mouse[1] >= self.y and mouse[1] <= self.y + self.height:  # The vertical (y) axis
-                self.hover = True  # The mouse is hovering
+    def typing(self, event):
+        if self.active and event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_BACKSPACE:
+                self.backspacePressed()
+            else:
+                self.textAppend(event.unicode)
+
+    def getPressed(self, event):
+        if self.hover and event.type == pygame.MOUSEBUTTONUP:
+            self.active = True
+            return True
+        elif event.type == pygame.MOUSEBUTTONUP:
+            self.active = False
+            return False
+
+    def events(self, event):
+        self.getPressed(event)
+        self.typing(event)
+
+    def isHover(self):
+        mouse = pygame.mouse.get_pos()
+
+        if mouse[0] >= self.x and mouse[0] <= self.x + self.width:
+            if mouse[1] >= self.y and mouse[1] <= self.y + self.height:
+                self.hover = True
+                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_IBEAM)
             else:
                 self.hover = False
+                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
         else:
             self.hover = False
-        return self.hover  # Returns the hover state (is there if needed)
+            pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
+        return self.hover
+
