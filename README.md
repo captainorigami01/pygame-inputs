@@ -36,6 +36,28 @@ The textbox has a blueprint and will work straight away without editing any of i
 
 `searchBar = TextBox()`
 
+### Label creation ###
+Import the label scripts:
+`from pygameinputs.Label import Label`
+this line will import the label module from the Pygame Inputs library
+
+To create a label firstly give it an identifier, in this case I am going to give mine an identifier of myLabel.
+
+The label has a blueprint and will work straight away without editing any of its attributes however it can be fully customised.
+
+`myLabel = Label()`
+
+### Slider creation ###
+Import the slider scripts: `from pygameinputs.Sliders import HorizontalSlider, VerticalSlider` this line will import the slider module from the pygame inputs library
+
+To create a slider firstly give it an identifier. In this case I am goting to give mine and idetifier of myHorizontalSlider.
+
+The slider has a blueprint and will work straight away without editing any of its attributes however it can be fully customised
+
+`myHorizontalSlider = HorizontalSlider()`
+
+for a vertical slider replace `HorizontalSlider()` with `VerticalSlider()`
+
 ## Changelog ##
 
 ### Version 0.0.1 ###
@@ -54,17 +76,23 @@ Fixed a bug with the border width property overwriting the background when set t
 
  - Added typing indicator
  - Added built in event handling within the button and textbox
- 
+
 ### Version 0.0.5 ###
 
  - Added text labels
 
+### Version 0.0.6 ###
+
+ - Added vertical and horizontal sliders
+ - Added hyperlink functionality within buttons to open apps and urls
+
 ## Future updates: ##
+ - Bug fixes
+ - Your reccomendations (read the paragraph below how to submit a feature request)
 
- - Make a horizontal and vertical slider
- - Add the ablity for buttons to handle links
-
-> If you have any reccomendations or would like to contribute please visit the [GitHub](https://github.com/captainorigami01/pygame-inputs) and make a pull request to upload code or create an issue with the enhancement label
+> If you have any reccomendations or would like to contribute please visit the [GitHub](https://github.com/captainorigami01/pygame-inputs) and make an issue with the enhancement label
 
 
 [Documentation](https://captainorigami01.github.io/pygame-inputs/)
+
+This library is not associated with pygame, it just uses their library to add input functionality
