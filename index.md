@@ -40,6 +40,21 @@ def update():
   update()  # Calls the update function
  pygame.quit()  # stops pygame and closes the window
 ```
+
+## Important! The latest version to be released soon has a bug fix with cursors
+To fix the cursors you need to check the hover states of all the inputs against each other and then change the cursor back to the default cursor of your choice. The code should look something like:
+```python
+def update():  # Uses the update loop from above with added inputs as an example
+ win.fill((60, 60, 60))
+ button1.draw(win)
+ TextBox1.draw(win)
+ Slider1.draw(win)
+ if button1.hover == TextBox1.hover == Slider1.hover == False:  # Checks that all of the inputs are in their default state
+  pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)  # Changes the cursor to the default arrow
+ pygame.display.update()
+```
+*Please note this update is not available yet. Doing this will not make any difference in the way your progrma reacts until the library has been updated. We highly reccomend you update the code to look like this so you don't have any bugs when the update is released*
+
 ### Button Creation
 
 > [The buttons can be found here](https://captainorigami01.github.io/pygame-inputs/buttons)
