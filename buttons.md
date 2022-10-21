@@ -78,4 +78,45 @@ for event in pygame.event.get():
 ```
 > [Sample script](https://github.com/captainorigami01/pygame-inputs/blob/b18fc5c870276ac123a5987894f9d5c2120b06b8/button-sample.py)
 
+Other buttons include app buttons which launch applications or files. Image buttons which use images instead of text. There are also link buttons which open hyperlinks in your browser.
+
+## App butons
+Importing app buttons:
+```python
+from Button import AppButton
+```
+
+App buttons have the same attributes as before but with the addition of app.
+The app attribute takes a string of the location for the file or application
+
+```python
+myButton = AppButton(app="notepad.exe")
+```
+
+## Image Buttons
+Importing Image Buttons
+```python
+from Button import ImageButton
+```
+
+Image buttons have the same attributes but without any of the text or background relaated attributes such as fonts, colours, bold, italics, etc. These are removed and cna be customised when creaton the imgae for the buttons.
+The images should be the same size as the button. If they are not bugs may occur and the library hasn't been designed for this.
+1 additional attribute has been added `image` This attribute takes a string which should be the path to the image you want to use.
+
+```python
+myButton = ImageButton(image="image.png")
+```
+
+## Link buttons
+Importing app buttons
+```python
+from Button import LinkButton
+```
+
+App buttons have the same attributes as a regualr button with the addiotion of `link`. link is a url in the form of a string. The url is opened in the default web browser.
+
+```python
+myButton = LinkButton(link="https://google.com")
+```
+
 Documentation is up to date for version 0.0.6
