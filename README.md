@@ -7,6 +7,7 @@ Please read the license before editing or sharing online
 ## Installation: ##
 
  - To use the package use the `pip install pygameinputs` command
+ - To get the beta (0.1) use `pip install -i https://test.pypi.org/simple/ pygameinputs`
 
 ## How to use: ##
 
@@ -86,8 +87,15 @@ Fixed a bug with the border width property overwriting the background when set t
  - Added vertical and horizontal sliders
  - Added hyperlink functionality within buttons to open apps and urls
 
+### Version 0.1 ###
+
+ - Minor bug fix - centre handles on sliders
+ - Major bug fix - fixed flickering cursors (read documentation to ensure your cursors are fixed)
+ - Added image buttons
+
 ## Future updates: ##
  - Bug fixes
+ - Add a hover state to image buttons
  - Your reccomendations (read the paragraph below how to submit a feature request)
 
 > If you have any reccomendations or would like to contribute please visit the [GitHub](https://github.com/captainorigami01/pygame-inputs) and make an issue with the enhancement label
