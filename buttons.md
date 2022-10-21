@@ -83,7 +83,7 @@ Other buttons include app buttons which launch applications or files. Image butt
 ## App butons
 Importing app buttons:
 ```python
-from Button import AppButton
+from pygameinputs.Button import AppButton
 ```
 
 App buttons have the same attributes as before but with the addition of app.
@@ -96,7 +96,7 @@ myButton = AppButton(app="notepad.exe")
 ## Image Buttons
 Importing Image Buttons
 ```python
-from Button import ImageButton
+from pygameinputs.Button import ImageButton
 ```
 
 Image buttons have the same attributes but without any of the text or background relaated attributes such as fonts, colours, bold, italics, etc. These are removed and cna be customised when creaton the imgae for the buttons.
@@ -110,7 +110,7 @@ myButton = ImageButton(image="image.png")
 ## Link buttons
 Importing app buttons
 ```python
-from Button import LinkButton
+from pygameinputs.Button import LinkButton
 ```
 
 App buttons have the same attributes as a regualr button with the addiotion of `link`. link is a url in the form of a string. The url is opened in the default web browser.
