@@ -37,7 +37,7 @@ class VerticalSlider(object):
             else:
                 handlePosY = round(self.y + (self.height * (self.sliderPercent / 100)) - (round(self.handle / 2)))
             height = handlePosY - self.y
-            handlePosX = self.x - (self.handle // 2)
+            handlePosX = self.x - (self.handle // 2) + self.width // 2
             pygame.draw.rect(window, self.sliderColor, (self.x, self.y, self.width, height))
             pygame.draw.rect(window, self.handleColor, (handlePosX, handlePosY, self.handle, self.handle))
 
@@ -47,6 +47,7 @@ class VerticalSlider(object):
         if mouse[0] >= self.x - (self.handle // 2) and mouse[0] <= self.x + (self.handle // 2):
             if mouse[1] >= self.y and mouse[1] <= self.y + self.height:
                 self.hover = True
+                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
             else:
                 self.hover = False
         else:
@@ -108,7 +109,7 @@ class HorizontalSlider(object):
             else:
                 handlePosX = round(self.x + (self.width * (self.sliderPercent / 100)) - (round(self.handle / 2)))
             width = handlePosX - self.x
-            handlePosY = self.y - (self.handle // 2)
+            handlePosY = self.y - (self.handle // 2) + self.height // 2
             pygame.draw.rect(window, self.sliderColor, (self.x, self.y, width, self.height))
             pygame.draw.rect(window, self.handleColor, (handlePosX, handlePosY, self.handle, self.handle))
 
@@ -118,6 +119,7 @@ class HorizontalSlider(object):
         if mouse[0] >= self.x and mouse[0] <= self.x + self.width:
             if mouse[1] >= self.y - (self.handle // 2) and mouse[1] <= self.y + (self.handle // 2):
                 self.hover = True
+                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
             else:
                 self.hover = False
         else:

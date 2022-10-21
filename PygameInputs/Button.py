@@ -58,13 +58,11 @@ class Button(object):
         if mouse[0] >= self.x and mouse[0] <= self.x + self.width:
             if mouse[1] >= self.y and mouse[1] <= self.y + self.height:
                 self.hover = True
-                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
+                pygame.mouse.set_cursor(pygame.cursors.Cursor(pygame.SYSTEM_CURSOR_HAND))
             else:
                 self.hover = False
-                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
         else:
             self.hover = False
-            pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
         return self.hover
 
     def getPressed(self, event):
@@ -109,3 +107,21 @@ class AppButton(Button):
             return True
         else:
             return False
+
+
+class ImageButton(Button):
+    def __init__(self, x: int = 0, y: int = 0, width: int = 200, height: int = 50,
+                 image: str = "button.png"):
+        text = font = ""
+        fontsize = borderWeight = 0
+        color = background = backgroundHover = borderColour = borderHoverColour = (0, 0, 0)
+        bold = italic = False
+        super().__init__(x, y, width, height, text, font, fontsize, color, background, backgroundHover, borderColour,
+                         borderHoverColour, borderWeight, bold, italic)
+        self.img = image
+
+    def draw(self, window):
+        self.isHover()
+        if self.visible:
+            img = pygame.image.load(self.img)
+            window.blit(img, (self.x, self.y))

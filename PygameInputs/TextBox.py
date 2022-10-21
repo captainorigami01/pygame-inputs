@@ -106,9 +106,7 @@ class TextBox(object):
                 pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_IBEAM)
             else:
                 self.hover = False
-                pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
         else:
             self.hover = False
-            pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
         return self.hover
 
