@@ -11,6 +11,8 @@ myTextBox = TextBox(x=150, y=225, placeholder="A placeholder", fontSize=18)  # C
 def update():
   win.fill((60, 60, 60)) # Sets the background of the window in RGB
   myTextBox.draw(win)  # Displays the text box to the screen
+  if myTextBox.hover == False:
+    pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
   pygame.display.update()
   
 
