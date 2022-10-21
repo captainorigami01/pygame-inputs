@@ -18,6 +18,8 @@ def update():
     win.fill((60, 60, 60))
     myVerticalSlider.draw(win)  # Displays the slider to the screen
     myHorizontalSlider.draw(win)  # same again
+    if myVerticalSlider.hover == myHorizontalSlider.hover == False:
+        pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
     pygame.display.update()
 
 
