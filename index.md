@@ -53,7 +53,7 @@ def update():  # Uses the update loop from above with added inputs as an example
   pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)  # Changes the cursor to the default arrow
  pygame.display.update()
 ```
-*Please note this update is not available yet. Doing this will not make any difference in the way your progrma reacts until the library has been updated. We highly reccomend you update the code to look like this so you don't have any bugs when the update is released*
+*Please note this update is not available yet. Doing this will not make any difference in the way your program reacts until the library has been updated. We highly reccomend you update the code to look like this so you don't have any bugs when the update is released*
 
 ### Button Creation
 
