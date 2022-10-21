@@ -119,4 +119,4 @@ App buttons have the same attributes as a regualr button with the addiotion of `
 myButton = LinkButton(link="https://google.com")
 ```
 
-Documentation is up to date for version 0.0.6
+Documentation is up to date for version 0.1
