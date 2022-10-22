@@ -93,9 +93,12 @@ Fixed a bug with the border width property overwriting the background when set t
  - Major bug fix - fixed flickering cursors (read documentation to ensure your cursors are fixed)
  - Added image buttons
 
+### Version 0.1.1 ###
+ - Added a hover state to the image buttons
+ - Fixed a bug with buttons still checking the hover state when not visible
+
 ## Future updates: ##
  - Bug fixes
- - Add a hover state to image buttons
  - Your reccomendations (read the paragraph below how to submit a feature request)
 
 > If you have any reccomendations or would like to contribute please visit the [GitHub](https://github.com/captainorigami01/pygame-inputs) and make an issue with the enhancement label
