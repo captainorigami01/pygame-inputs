@@ -40,8 +40,12 @@ class Button(object):
                 pygame.draw.rect(window, self.bg, (self.x, self.y, self.width, self.height))
                 if self.borderWidth > 0:
                     pygame.draw.rect(window, self.border, (self.x, self.y, self.width, self.height), self.borderWidth)
-
-            font = pygame.font.SysFont(self.font, self.fs, self.bold, self.italic)
+            if self.font.endswith(".ttf"):
+                font = pygame.font.Font(self.font, self.fs)
+                font.bold = self.bold
+                font.italic = self.italic
+            else:
+                font = pygame.font.SysFont(self.font, self.fs, self.bold, self.italic)
             text = font.render(self.text, True, self.color)
             text_rect = text.get_rect()
             width = text_rect.width
