@@ -7,7 +7,6 @@ Please read the license before editing or sharing online
 ## Installation: ##
 
  - To use the package use the `pip install pygameinputs` command
- - To get the beta (0.1) use `pip install -i https://test.pypi.org/simple/ pygameinputs`
 
 ## How to use: ##
 
@@ -96,6 +95,7 @@ Fixed a bug with the border width property overwriting the background when set t
 ## Future updates: ##
  - Bug fixes
  - Add a hover state to image buttons
+ - Fixed buttons not loading ttf files
  - Your reccomendations (read the paragraph below how to submit a feature request)
 
 > If you have any reccomendations or would like to contribute please visit the [GitHub](https://github.com/captainorigami01/pygame-inputs) and make an issue with the enhancement label
