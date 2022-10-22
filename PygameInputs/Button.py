@@ -30,8 +30,8 @@ class Button(object):
         self.hover = False
 
     def draw(self, window):
-        self.isHover()
         if self.visible:
+            self.isHover()
             if self.hover:
                 pygame.draw.rect(window, self.bgHover, (self.x, self.y, self.width, self.height))
                 if self.borderWidth > 0:
@@ -115,7 +115,7 @@ class AppButton(Button):
 
 class ImageButton(Button):
     def __init__(self, x: int = 0, y: int = 0, width: int = 200, height: int = 50,
-                 image: str = "button.png"):
+                 image: str = "button.png", hoverImage: str = "button.png"):
         text = font = ""
         fontsize = borderWeight = 0
         color = background = backgroundHover = borderColour = borderHoverColour = (0, 0, 0)
@@ -123,9 +123,13 @@ class ImageButton(Button):
         super().__init__(x, y, width, height, text, font, fontsize, color, background, backgroundHover, borderColour,
                          borderHoverColour, borderWeight, bold, italic)
         self.img = image
+        self.hImg = hoverImage
 
     def draw(self, window):
-        self.isHover()
         if self.visible:
-            img = pygame.image.load(self.img)
+            self.isHover()
+            if not self.hover:
+                img = pygame.image.load(self.img)
+            else:
+                img = pygame.image.load(self.hImg)
             window.blit(img, (self.x, self.y))
