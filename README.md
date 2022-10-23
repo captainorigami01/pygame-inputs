@@ -96,6 +96,9 @@ Fixed a bug with the border width property overwriting the background when set t
 ### Version 0.1.1 ###
  - Added a hover state to the image buttons
  - Fixed a bug with buttons still checking the hover state when not visible
+ 
+ ### Version 0.1.2 ###
+ - Fixed a bug with buttons not changing their hover state to False when hidden
 
 ## Future updates: ##
  - Bug fixes
