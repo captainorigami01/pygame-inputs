@@ -55,6 +55,8 @@ class Button(object):
             textY = (self.y + (self.height // 2)) - height // 2
 
             window.blit(text, (textX, textY))
+        else:
+            self.hover = False
 
     def isHover(self):
         mouse = pygame.mouse.get_pos()
@@ -133,3 +135,5 @@ class ImageButton(Button):
             else:
                 img = pygame.image.load(self.hImg)
             window.blit(img, (self.x, self.y))
+        else:
+            self.hover = False
