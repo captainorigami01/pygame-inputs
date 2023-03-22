@@ -40,6 +40,7 @@ The button object allows different customisations, the table below describes the
 |italic (Boolean)|myButton = Button(italic=True)|Sets the text to italic when True, is False by default|
 |link (string)|myButton = LinkButton(link="https://google.com")|Takes a link to open as a URL in a webbrowser. ***Link buttons only***|
 |app( string)|myButton = AppButton(app="C:\\Windows\\System32\\notepad.exe")|Takes the path to the app or file that you want to open. ***App buttons only***|
+|borderRadius (int)|myButton = Button(borderRadius=5)|Sets the border radius in pixels. This creates the rounded corners found on many modern buttons|
 
 #### Button methods
 
@@ -119,4 +120,4 @@ App buttons have the same attributes as a regualr button with the addiotion of `
 myButton = LinkButton(link="https://google.com")
 ```
 
-Documentation is up to date for version 0.1
+Documentation is up to date for version 0.1.4
