@@ -8,7 +8,7 @@ class TextBox(object):
     def __init__(self, x:int = 0, y:int = 0, width:int = 200, height:int = 50, placeholder:str = "", font:str = "calibri",
                  fontSize:int = 11, color:tuple = (0, 0, 0), background:tuple = (230, 230, 230), backgroundHover:tuple = (200, 200, 200),
                  borderColour:tuple = (230, 230, 230), borderHoverColour:tuple = (200, 200, 200), borderWeight:int = 1, bold:bool = False, italic:bool = False,
-                 minlen:int = 0, maxlen:int = 0):
+                 minlen:int = 0, maxlen:int = 0, borderRadius: int = -1):
         self.x = x
         self.y = y
         self.width = width
@@ -30,15 +30,18 @@ class TextBox(object):
         self.hover = False
         self.active = False
         self.counter = time.time()
+        self.borderRadius = borderRadius
 
     def draw(self, window):
         self.isHover()
         if self.hover or self.active:
-            pygame.draw.rect(window, self.bgHover, (self.x, self.y, self.width, self.height))
-            pygame.draw.rect(window, self.hborder, (self.x, self.y, self.width, self.height), self.borderWidth)
+            pygame.draw.rect(window, self.bgHover, (self.x, self.y, self.width, self.height), 0, self.borderRadius)
+            pygame.draw.rect(window, self.hborder, (self.x, self.y, self.width, self.height), self.borderWidth,
+                             self.borderRadius)
         else:
-            pygame.draw.rect(window, self.bg, (self.x, self.y, self.width, self.height))
-            pygame.draw.rect(window, self.border, (self.x, self.y, self.width, self.height), self.borderWidth)
+            pygame.draw.rect(window, self.bg, (self.x, self.y, self.width, self.height), 0, self.borderRadius)
+            pygame.draw.rect(window, self.border, (self.x, self.y, self.width, self.height), self.borderWidth,
+                             self.borderRadius)
 
         font = pygame.font.SysFont(self.font, self.fs, self.bold, self.italic)
         if self.text == "":
