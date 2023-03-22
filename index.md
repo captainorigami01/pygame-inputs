@@ -71,3 +71,4 @@ def update():  # Uses the update loop from above with added inputs as an example
 
 > [The sliders can be found here](https://captainorigami01.github.io/pygame-inputs/sliders)
 
+***Everything is up to date for version 0.1.4***
