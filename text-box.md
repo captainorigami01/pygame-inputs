@@ -45,6 +45,7 @@ The text box object allows different customisations, the table below describes t
 | italic (Boolean) | myTextBox = TextBox(italic=True) | Makes the text italic when True |
 | minlen (int) | myTextBox = TextBox(minlength=5) | The minimum input length before the input is accepted **Not functional yet** |
 | maxlen (int) | myTextBox = TextBox(maxlen=10) | Te maximum accepted length for the input in the text box |
+|borderRadius (int)| myTextBox = TextBox(borderRadius=5)|Sets the border radius in pixels. This creates rounded corners on your text box|
 
 ### TextBox methods
 
